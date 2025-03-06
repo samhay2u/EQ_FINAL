@@ -1,0 +1,213 @@
+================================================================================
+ETL TEST GENERATOR REPORT - 2025-03-05 16:22:01
+================================================================================
+
+SUMMARY:
+  Modules analyzed: 1
+  Total functions: 53
+  Functions tested: 53
+  Tests passed: 46
+  Tests failed: 7
+  Errors: 0
+
+  Test coverage: 100.0%
+
+FAILING FUNCTIONS:
+
+  Module: C:\Users\samha\PycharmProjects\EQ_FINAL_03_04\main_consolidated.py
+    - print_with_tabs: FAIL
+      Reason: unsupported format string passed to NoneType.__format__
+    - verify_output_files: FAIL
+      Reason: 'NoneType' object has no attribute 'get'
+    - load_file_with_retry: FAIL
+      Reason: [Errno 13] Permission denied: 'test_data/test_file.txt'
+    - main: FAIL
+      Reason: [Errno 2] No such file or directory: 'test_data\\config.json'
+    - __init__: FAIL
+      Reason: module() missing required argument 'name' (pos 1)
+    - SchemaHandler._extract_keys: FAIL
+      Reason: 'NoneType' object has no attribute 'add'
+    - SchemaHandler._read_schema_file: FAIL
+      Reason: [Errno 13] Permission denied: 'test_data\\test_file.txt'
+
+DETAILED RESULTS:
+
+Module: C:\Users\samha\PycharmProjects\EQ_FINAL_03_04\main_consolidated.py
+--------------------------------------------------------------------------------
+  ✓ PASS - setup_logging
+    Execution time: 0.0000s
+    Return value: <RootLogger root (INFO)>
+  ✓ PASS - print_with_checkmark
+    Execution time: 0.0000s
+    Return value: None
+  ✗ FAIL - print_with_tabs
+    Execution time: 0.0000s
+    Error: unsupported format string passed to NoneType.__format__
+    Exception type: TypeError
+  ✗ FAIL - verify_output_files
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'get'
+    Exception type: AttributeError
+  ✓ PASS - validate_network_path
+    Execution time: 0.0000s
+    Return value: True
+  ✓ PASS - ensure_directory_exists
+    Execution time: 0.0010s
+    Return value: None
+  ✓ PASS - save_with_retry
+    Execution time: 0.0000s
+    Return value: True
+  ✗ FAIL - load_file_with_retry
+    Execution time: 21.0023s
+    Error: [Errno 13] Permission denied: 'test_data/test_file.txt'
+    Exception type: PermissionError
+  ✓ PASS - save_combined_output
+    Execution time: 0.0000s
+    Return value: False
+  ✓ PASS - track_step
+    Execution time: 0.0000s
+    Return value: <function track_step.<locals>.<lambda> at 0x000001CADA9C4180>
+  ✓ PASS - create_save_function
+    Execution time: 0.0000s
+    Return value: <function create_save_function.<locals>.save_data at 0x000001CADA9C4540>
+  ✗ FAIL - main
+    Execution time: 0.0020s
+    Error: [Errno 2] No such file or directory: 'test_data\\config.json'
+    Exception type: FileNotFoundError
+  ✓ PASS - format
+    Execution time: 0.0011s
+    Return value: None
+  ✗ FAIL - __init__
+    Execution time: 0.0000s
+    Error: module() missing required argument 'name' (pos 1)
+    Exception type: TypeError
+  ✓ PASS - ensure_directories
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - get_path
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - get_config_value
+    Execution time: 0.0010s
+    Return value: None
+  ✓ PASS - get_input_file_path
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - get_output_file_path
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - get_app_paths
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_json_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_xml_data
+    Execution time: 0.0010s
+    Return value: None
+  ✓ PASS - process_collection_n
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_xml_root
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - xml_to_dict
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - transform_value
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - parse_element_text
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - flatten_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_xml_content
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - create_matched_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - strip_key_prefixes
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - save_json_file
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - load_schema
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - generate_pydantic_model
+    Execution time: 0.0010s
+    Return value: None
+  ✓ PASS - get_schema_keys
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - resolve_path
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - save_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - check_path
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - save_combined_data
+    Execution time: 0.0010s
+    Return value: None
+  ✓ PASS - ConfigurationManager._load_config
+    Execution time: 0.0000s
+    Return value: {'input_files': {'json_input': 'test_data/mock_data.json', 'xml_input': 'test_data/mock_data.xml'}, 
+  ✓ PASS - ConfigurationManager._resolve_path
+    Execution time: 0.0000s
+    Return value: test_data/test_file.txt
+  ✓ PASS - ConfigurationManager._setup_paths
+    Execution time: 0.0000s
+    Return value: {'base_dir': WindowsPath('test_data'), 'input_files': {'json': WindowsPath('test_data/mock_data.json
+  ✓ PASS - PlatformManager._get_platform_info
+    Execution time: 0.0000s
+    Return value: {'system': 'Windows', 'release': '11', 'version': '10.0.26100', 'machine': 'AMD64', 'processor': 'In
+  ✓ PASS - PlatformManager._set_permissions
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - SchemaHandler._process_schema_item
+    Execution time: 0.0000s
+    Return value: {'key1': 'value1', 'key2': 'value2', 'id': 12345}
+  ✓ PASS - SchemaHandler._decode_blob
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - SchemaHandler._generate_model_code
+    Execution time: 0.0000s
+    Return value: from pydantic import BaseModel, Field, validator
+from typing import Optional, List, Dict, Any, Union
+  ✓ PASS - SchemaHandler._generate_nested_model
+    Execution time: 0.0000s
+    Return value: class None(BaseModel):
+    field_0: Optional[Any]
+    field_1: List[str]
+    field_2: bool
+    field
+  ✓ PASS - SchemaHandler._infer_field_type
+    Execution time: 0.0000s
+    Return value: Optional[Any]
+  ✓ PASS - SchemaHandler._get_validator_code
+    Execution time: 0.0000s
+    Return value: 
+    @validator('*', pre=True)
+    def decode_json_strings(cls, v):
+        if isinstance(v, str) an
+  ✗ FAIL - SchemaHandler._extract_keys
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'add'
+    Exception type: AttributeError
+  ✗ FAIL - SchemaHandler._read_schema_file
+    Execution time: 0.0000s
+    Error: [Errno 13] Permission denied: 'test_data\\test_file.txt'
+    Exception type: PermissionError
+
+================================================================================
+End of report

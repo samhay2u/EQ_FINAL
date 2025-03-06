@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <feature>
+        <_key>1003</_key>
+        <type>Feature</type>
+        <properties>
+            <magnitude>
+                <value>2.7</value>
+                <type>md</type>
+                <uncertainty>0.15</uncertainty>
+                <historical_values>[2.5, 2.6, 2.7, 2.8, 2.7]</historical_values>
+            </magnitude>
+            <location>
+                <description>8 km W of Anchorage, Alaska</description>
+                <coordinates>
+                    <latitude>61.2181</latitude>
+                    <longitude>-149.9661</longitude>
+                    <depth>
+                        <value>41.3</value>
+                        <unit>km</unit>
+                    </depth>
+                </coordinates>
+                <nearby_cities>
+                    [{"name": "Anchorage", "distance": 8, "direction": "E"}, {"name": "Eagle River", "distance": 15, "direction": "N"}, {"name": "Wasilla", "distance": 55, "direction": "NNE"}]
+                </nearby_cities>
+            </location>
+            <time>
+                <occurrence>1722622125786</occurrence>
+                <last_updated>1722623044797</last_updated>
+            </time>
+            <impact>
+                <felt>5</felt>
+                <cdi>2.1</cdi>
+                <mmi>null</mmi>
+                <alert>null</alert>
+                <reports>[{"location": "Anchorage", "intensity": "weak", "reported_magnitudes": [2.5, 2.7, 2.6]}]</reports>
+            </impact>
+            <status>
+                <current>reviewed</current>
+                <history>
+                    [{"status": "automatic", "timestamp": 1722622126000}, {"status": "reviewed", "timestamp": 1722623044797}]
+                </history>
+            </status>
+            <metadata>
+                <tsunami>0</tsunami>
+                <sig>112</sig>
+                <network_info>
+                    <net>ak</net>
+                    <code>0221wqp36d</code>
+                </network_info>
+                <ids>["ak0221wqp36d"]</ids>
+                <sources>["ak"]</sources>
+                <types>["origin", "phase-data", "macroseismic"]</types>
+            </metadata>
+            <technical_info>
+                <nst>35</nst>
+                <dmin>0.1908</dmin>
+                <rms>0.74</rms>
+                <gap>97</gap>
+                <seismic_stations>[2, 4, 6, 8, 10, 12, 14, 16]</seismic_stations>
+                <wave_arrivals>
+                    [[0.4, 0.8], [1.1, 2.2], [1.7, 3.4], [2.2, 4.4], [2.8, 5.6], [3.3, 6.6]]
+                </wave_arrivals>
+                <analysis>
+                    <waveform>
+                        <peak_ground_acceleration>0.02</peak_ground_acceleration>
+                        <peak_ground_velocity>0.01</peak_ground_velocity>
+                        <peak_ground_displacement>0.0005</peak_ground_displacement>
+                        <duration>12.5</duration>
+                        <arias_intensity>0.0015</arias_intensity>
+                    </waveform>
+                </analysis>
+            </technical_info>
+        </properties>
+    </feature>
+    <feature>
+        <_key>1001</_key>
+        <type>Feature</type>
+        <properties>
+            <magnitude>
+                <value>2.9</value>
+                <type>ml</type>
+                <uncertainty>0.1</uncertainty>
+                <historical_values>[2.7, {"previous": [2.8, {"aftershock": 2.5}]}, 2.9, {"sequence": {"foreshock": 2.6, "mainshock": 3.0, "aftershocks": [2.8, 2.7, 2.6]}}, 2.9]</historical_values>
+            </magnitude>
+            <location>
+                <description>56 km S of Whites City, New Mexico</description>
+                <coordinates>
+                    <latitude>31.669</latitude>
+                    <longitude>-104.346</longitude>
+                    <depth>
+                        <value>5.2</value>
+                        <unit>km</unit>
+                        <uncertainty>{"statistical": 0.5, "systematic": 0.2}</uncertainty>
+                    </depth>
+                    <reference_systems>
+                        <geographic>WGS84</geographic>
+                        <vertical>NAVD88</vertical>
+                    </reference_systems>
+                </coordinates>
+                <distance_to_major_cities>
+                    [{"city": "Whites City", "distance": 56, "population": 7}, {"city": "El Paso", "distance": 120, "details": {"population": 678815, "elevation": 1145, "time_zone": "MDT"}}, {"city": "Albuquerque", "distance": 230, "details": {"population": 560513, "elevation": 1619, "time_zone": "MDT", "airports": ["ABQ", "AEG"]}}]
+                </distance_to_major_cities>
+            </location>
+            <time>
+                <occurrence>1722614325786</occurrence>
+                <last_updated>1722615944797</last_updated>
+                <timezone>
+                    <name>America/Denver</name>
+                    <offset>-06:00</offset>
+                    <dst>true</dst>
+                </timezone>
+            </time>
+            <details>
+                <felt>null</felt>
+                <cdi>null</cdi>
+                <mmi>null</mmi>
+                <alert>null</alert>
+                <pager>
+                    <alert_level>green</alert_level>
+                    <population_exposure>[{"intensity": "I", "population": 0}, {"intensity": "II", "population": 500}, {"intensity": "III", "population": 100}]</population_exposure>
+                    <cities_affected>[]</cities_affected>
+                </pager>
+            </details>
+            <status>
+                <current>reviewed</current>
+                <history>
+                    [{"status": "automatic", "timestamp": 1722614326000, "details": {"algorithm": "FirstMotion", "version": "1.2.3", "confidence": 0.85}}, {"status": "reviewed", "timestamp": 1722615944797, "reviewer": {"id": "USGS_Rev_001", "experience_years": 15, "specialization": "SouthwestUS"}}]
+                </history>
+            </status>
+            <metadata>
+                <tsunami>0</tsunami>
+                <sig>129</sig>
+                <network_info>
+                    <net>tx</net>
+                    <code>2024pcfh</code>
+                    <stations>{"used": 53, "available": 78, "types": {"broadband": 35, "short_period": 15, "strong_motion": 3}}</stations>
+                </network_info>
+                <ids>["us6000nhlq", "tx2024pcfh"]</ids>
+                <sources>["us", "tx"]</sources>
+                <types>["origin", "phase-data"]</types>
+                <data_quality>
+                    <mag_quality>A</mag_quality>
+                    <location_quality>B</location_quality>
+                    <depth_quality>B</depth_quality>
+                </data_quality>
+            </metadata>
+            <technical_info>
+                <nst>53</nst>
+                <dmin>0.1</dmin>
+                <rms>0.2</rms>
+                <gap>68</gap>
+                <seismic_stations>[{"id": 1, "type": "broadband", "distance": 23.5}, {"id": 2, "type": "short_period", "distance": 45.2}, {"id": 3, "type": "broadband", "distance": 67.8, "azimuth": 120}, {"id": 4, "type": "strong_motion", "distance": 89.3, "soil_type": "rock"}]</seismic_stations>
+                <wave_arrivals>
+                    <p_wave>[{"time": 0.5, "amplitude": 0.02, "period": 0.1}, {"time": 1.2, "amplitude": 0.03, "period": 0.15}, {"time": 1.8, "amplitude": 0.025, "period": 0.12}]</p_wave>
+                    <s_wave>[{"time": 1.0, "amplitude": 0.04, "period": 0.2}, {"time": 2.4, "amplitude": 0.05, "period": 0.25}, {"time": 3.6, "amplitude": 0.045, "period": 0.22}]</s_wave>
+                </wave_arrivals>
+                <analysis>
+                    <frequency_spectrum>
+                        <dominant_frequency>2.5</dominant_frequency>
+                        <amplitude>0.02</amplitude>
+                        <phase>45</phase>
+                        <noise_level>0.001</noise_level>
+                        <signal_to_noise_ratio>20</signal_to_noise_ratio>
+                        <spectral_content>[{"frequency": 1.0, "amplitude": 0.015, "phase": 30}, {"frequency": 2.0, "amplitude": 0.02, "phase": 45}, {"frequency": 3.0, "amplitude": 0.018, "phase": 60}]</spectral_content>
+                        <harmonics>[{"order": 1, "frequency": 2.5, "amplitude": 0.02}, {"order": 2, "frequency": 5.0, "amplitude": 0.01}, {"order": 3, "frequency": 7.5, "amplitude": 0.005}]</harmonics>
+                    </frequency_spectrum>
+                    <source_parameters>
+                        <moment_tensor>
+                            <mrr>-0.85e17</mrr>
+                            <mtt>1.32e17</mtt>
+                            <mpp>-0.47e17</mpp>
+                            <mrt>-0.55e17</mrt>
+                            <mrp>-0.76e17</mrp>
+                            <mtp>0.25e17</mtp>
+                        </moment_tensor>
+                        <stress_drop>
+                            <value>2.5</value>
+                            <unit>MPa</unit>
+                            <uncertainty>0.5</uncertainty>
+                            <method>spectral</method>
+                        </stress_drop>
+                        <rupture>
+                            <length>0.8</length>
+                            <width>0.5</width>
+                            <area>0.4</area>
+                            <velocity>2.5</velocity>
+                        </rupture>
+                    </source_parameters>
+                    <ground_motion>
+                        <pga>
+                            <value>0.02</value>
+                            <unit>g</unit>
+                            <component>horizontal</component>
+                        </pga>
+                        <pgv>
+                            <value>0.5</value>
+                            <unit>cm/s</unit>
+                            <component>vertical</component>
+                        </pgv>
+                        <response_spectra>
+                            [{"period": 0.1, "acceleration": 0.03}, {"period": 0.3, "acceleration": 0.025}, {"period": 1.0, "acceleration": 0.015}]
+                        </response_spectra>
+                    </ground_motion>
+                </analysis>
+            </technical_info>
+        </properties>
+    </feature>
+    <feature>
+        <_key>1002</_key>
+        <type>Feature</type>
+        <properties>
+            <magnitude>
+                <value>3.1</value>
+                <type>mb_lg</type>
+                <uncertainty>0.2</uncertainty>
+                <historical_values>
+                    [2.9, {"preceding": {"foreshock": 2.8, "swarm": [2.7, 2.6, 2.8]}}, 3.1, {"subsequent": {"aftershocks": [3.0, 2.9, 2.8], "largest": 3.0}}, 3.1]
+                </historical_values>
+                <magnitude_types>
+                    <mb_lg>3.1</mb_lg>
+                    <ml>3.0</ml>
+                    <mw>3.2</mw>
+                </magnitude_types>
+            </magnitude>
+            <location>
+                <description>12 km NE of Ridgecrest, California</description>
+                <coordinates>
+                    <latitude>35.6522</latitude>
+                    <longitude>-117.5523</longitude>
+                    <depth>
+                        <value>7.1</value>
+                        <unit>km</unit>
+                        <uncertainty>
+                            <statistical>0.7</statistical>
+                            <systematic>0.3</systematic>
+                        </uncertainty>
+                        <method>multiple_event_relocation</method>
+                    </depth>
+                    <reference_frame>
+                        <horizontal>NAD83</horizontal>
+                        <vertical>NAVD88</vertical>
+                        <epoch>2011.00</epoch>
+                    </reference_frame>
+                </coordinates>
+                <distance_to_major_cities>
+                    [{"city": "Ridgecrest", "distance": 12, "details": {"population": 27959, "elevation": 681, "notable_features": ["Naval Air Weapons Station China Lake"]}}, {"city": "Los Angeles", "distance": 145, "details": {"population": 3898747, "elevation": 93, "time_zone": "PDT", "major_airports": ["LAX", "BUR"]}}]
+                </distance_to_major_cities>
+                <tectonic_setting>
+                    <plate_boundary>Transform</plate_boundary>
+                    <major_fault>Eastern California Shear Zone</major_fault>
+                    <local_structures>["Little Lake Fault Zone", "Airport Lake Fault Zone"]</local_structures>
+                </tectonic_setting>
+            </location>
+            <time>
+                <occurrence>1722618925786</occurrence>
+                <last_updated>1722619544797</last_updated>
+                <timezone>
+                    <name>America/Los_Angeles</name>
+                    <offset>-07:00</offset>
+                    <dst>true</dst>
+                    <transitions>
+                        <dst_start>2024-03-10T02:00:00</dst_start>
+                        <dst_end>2024-11-03T02:00:00</dst_end>
+                    </transitions>
+                </timezone>
+            </time>
+            <details>
+                <felt>18</felt>
+                <cdi>3.2</cdi>
+                <mmi>2.8</mmi>
+                <alert>green</alert>
+                <pager>
+                    <alert_level>green</alert_level>
+                    <economic_losses>
+                        <estimated_usd>0-1M</estimated_usd>
+                        <probability>
+                            <green>0.95</green>
+                            <yellow>0.05</yellow>
+                        </probability>
+                    </economic_losses>
+                    <fatalities>
+                        <estimated>0-1</estimated>
+                        <probability>
+                            <no_fatalities>0.99</no_fatalities>
+                            <some_fatalities>0.01</some_fatalities>
+                        </probability>
+                    </fatalities>
+                </pager>
+                <shake_map>
+                    <mmi_intensity>
+                        <max>3.5</max>
+                        <min>1.0</min>
+                        <mean>2.2</mean>
+                    </mmi_intensity>
+                    <pga>
+                        <max>0.05</max>
+                        <min>0.001</min>
+                        <mean>0.015</mean>
+                    </pga>
+                    <pgv>
+                        <max>1.2</max>
+                        <min>0.05</min>
+                        <mean>0.4</mean>
+                    </pgv>
+                </shake_map>
+            </details>
+            <status>
+                <current>reviewed</current>
+                <history>
+                    [{"status": "automatic", "timestamp": 1722618926000, "system": {"name": "AQMS", "version": "5.3.2", "module": "Earthworm", "confidence": 0.92}}, {"status": "automatic", "timestamp": 1722618926000, "system": {"name": "AQMS", "version": "5.3.2", "module": "Earthworm", "confidence": 0.92}}, {"status": "reviewed", "timestamp": 1722619544797, "reviewer": {"id": "USGS_CA_002", "experience_years": 10, "specialization": "Southern California Seismicity"}}]
+                </history>
+            </status>
+            <metadata>
+                <tsunami>0</tsunami>
+                <sig>148</sig>
+                <network_info>
+                    <net>ci</net>
+                    <code>39734064</code>
+                </network_info>
+                <ids>["ci39734064"]</ids>
+                <sources>["ci"]</sources>
+                <types>["origin", "phase-data", "moment-tensor"]</types>
+            </metadata>
+            <technical_info>
+                <nst>42</nst>
+                <dmin>0.03584</dmin>
+                <rms>0.17</rms>
+                <gap>39</gap>
+                <seismic_stations>[1, 3, 5, 7, 9, 11, 13]</seismic_stations>
+                <wave_arrivals>
+                    <p_wave>[0.6, 1.3, 2.0, 2.7, 3.4]</p_wave>
+                    <s_wave>[1.2, 2.6, 4.0, 5.4, 6.8]</s_wave>
+                </wave_arrivals>
+                <analysis>
+                    <frequency_content>
+                        <dominant_frequency>3.2</dominant_frequency>
+                        <spectral_amplitude>0.15</spectral_amplitude>
+                        <bandwidth>4.5</bandwidth>
+                        <quality_factor>80</quality_factor>
+                        <corner_frequency>3.8</corner_frequency>
+                    </frequency_content>
+                </analysis>
+            </technical_info>
+        </properties>
+    </feature>
+</root>

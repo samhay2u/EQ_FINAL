@@ -1,0 +1,184 @@
+================================================================================
+ETL TEST GENERATOR REPORT - 2025-03-05 14:14:12
+================================================================================
+
+SUMMARY:
+  Modules analyzed: 1
+  Total functions: 39
+  Functions tested: 39
+  Tests passed: 25
+  Tests failed: 8
+  Errors: 6
+
+  Test coverage: 100.0%
+
+FAILING FUNCTIONS:
+
+  Module: C:\Users\samha\PycharmProjects\EQ_FINAL_03_04\main_consolidated.py
+    - print_with_tabs: FAIL
+      Reason: unsupported format string passed to NoneType.__format__
+    - verify_output_files: FAIL
+      Reason: 'NoneType' object has no attribute 'get'
+    - load_file_with_retry: FAIL
+      Reason: [Errno 13] Permission denied: 'test_data/test_file.txt'
+    - main: FAIL
+      Reason: [Errno 2] No such file or directory: 'test_data\\config.json'
+    - format: FAIL
+      Reason: 'NoneType' object has no attribute 'getMessage'
+    - __init__: FAIL
+      Reason: module() missing required argument 'name' (pos 1)
+    - xml_to_dict: FAIL
+      Reason: 'NoneType' object has no attribute 'tag'
+    - parse_element_text: FAIL
+      Reason: 'NoneType' object has no attribute 'text'
+    - load_schema: ERROR
+      Reason: 'MockSchemaHandler' object has no attribute 'load_schema'
+    - generate_pydantic_model: ERROR
+      Reason: 'MockSchemaHandler' object has no attribute 'generate_pydantic_model'
+    - get_schema_keys: ERROR
+      Reason: 'MockSchemaHandler' object has no attribute 'get_schema_keys'
+    - resolve_path: ERROR
+      Reason: Function resolve_path not found in module
+    - save_data: ERROR
+      Reason: Function save_data not found in module
+    - save_combined_data: ERROR
+      Reason: Function save_combined_data not found in module
+
+DETAILED RESULTS:
+
+Module: C:\Users\samha\PycharmProjects\EQ_FINAL_03_04\main_consolidated.py
+--------------------------------------------------------------------------------
+  ✓ PASS - setup_logging
+    Execution time: 0.0000s
+    Return value: <RootLogger root (INFO)>
+  ✓ PASS - print_with_checkmark
+    Execution time: 0.0000s
+    Return value: None
+  ✗ FAIL - print_with_tabs
+    Execution time: 0.0000s
+    Error: unsupported format string passed to NoneType.__format__
+    Exception type: TypeError
+  ✗ FAIL - verify_output_files
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'get'
+    Exception type: AttributeError
+  ✓ PASS - validate_network_path
+    Execution time: 0.0000s
+    Return value: True
+  ✓ PASS - ensure_directory_exists
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - save_with_retry
+    Execution time: 0.0000s
+    Return value: True
+  ✗ FAIL - load_file_with_retry
+    Execution time: 21.0026s
+    Error: [Errno 13] Permission denied: 'test_data/test_file.txt'
+    Exception type: PermissionError
+  ✓ PASS - save_combined_output
+    Execution time: 0.0000s
+    Return value: False
+  ✓ PASS - track_step
+    Execution time: 0.0000s
+    Return value: <function track_step.<locals>.<lambda> at 0x000001FBEBCA0D60>
+  ✓ PASS - create_save_function
+    Execution time: 0.0000s
+    Return value: <function create_save_function.<locals>.save_data at 0x000001FBEBCA0CC0>
+  ✗ FAIL - main
+    Execution time: 0.0010s
+    Error: [Errno 2] No such file or directory: 'test_data\\config.json'
+    Exception type: FileNotFoundError
+  ✗ FAIL - format
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'getMessage'
+    Exception type: AttributeError
+  ✗ FAIL - __init__
+    Execution time: 0.0000s
+    Error: module() missing required argument 'name' (pos 1)
+    Exception type: TypeError
+  ✓ PASS - ensure_directories
+    Execution time: 0.0000s
+    Return value: True
+  ✓ PASS - get_path
+    Execution time: 0.0000s
+    Return value: test_data\None
+  ✓ PASS - get_config_value
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - get_input_file_path
+    Execution time: 0.0000s
+    Return value: test_data\None.txt
+  ✓ PASS - get_output_file_path
+    Execution time: 0.0000s
+    Return value: test_data\output\None.txt
+  ✓ PASS - get_app_paths
+    Execution time: 0.0000s
+    Return value: {'base': WindowsPath('C:/Users/samha/PycharmProjects'), 'config': WindowsPath('C:/Users/samha/Pychar
+  ✓ PASS - process_data
+    Execution time: 0.0000s
+    Return value: [{'id': 'test1', 'name': 'Item 1', 'value': 100}, {'id': 'test2', 'name': 'Item 2', 'value': 200}]
+  ✓ PASS - process_json_data
+    Execution time: 0.0000s
+    Return value: [{'id': 'test1', 'name': 'Item 1', 'value': 100}, {'id': 'test2', 'name': 'Item 2', 'value': 200}]
+  ✓ PASS - process_xml_data
+    Execution time: 0.0000s
+    Return value: [{'id': 'test1', 'name': 'Item 1', 'value': 100}, {'id': 'test2', 'name': 'Item 2', 'value': 200}]
+  ✓ PASS - process_collection_n
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - process_xml_root
+    Execution time: 0.0000s
+    Return value: [{'id': 'xml1', 'name': 'XML Item 1', 'value': 100}, {'id': 'xml2', 'name': 'XML Item 2', 'value': 2
+  ✗ FAIL - xml_to_dict
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'tag'
+    Exception type: AttributeError
+  ✓ PASS - transform_value
+    Execution time: 0.0000s
+    Return value: None
+  ✗ FAIL - parse_element_text
+    Execution time: 0.0000s
+    Error: 'NoneType' object has no attribute 'text'
+    Exception type: AttributeError
+  ✓ PASS - flatten_data
+    Execution time: 0.0000s
+    Return value: {'value': None}
+  ✓ PASS - process_xml_content
+    Execution time: 0.0000s
+    Return value: [{'id': 'xml1', 'name': 'XML Item 1', 'value': 100}, {'id': 'xml2', 'name': 'XML Item 2', 'value': 2
+  ✓ PASS - create_matched_data
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - strip_key_prefixes
+    Execution time: 0.0000s
+    Return value: None
+  ✓ PASS - save_json_file
+    Execution time: 0.0010s
+    Return value: True
+  ! ERROR - load_schema
+    Execution time: 0.0000s
+    Error: 'MockSchemaHandler' object has no attribute 'load_schema'
+    Exception type: AttributeError
+  ! ERROR - generate_pydantic_model
+    Execution time: 0.0000s
+    Error: 'MockSchemaHandler' object has no attribute 'generate_pydantic_model'
+    Exception type: AttributeError
+  ! ERROR - get_schema_keys
+    Execution time: 0.0000s
+    Error: 'MockSchemaHandler' object has no attribute 'get_schema_keys'
+    Exception type: AttributeError
+  ! ERROR - resolve_path
+    Execution time: 0.0000s
+    Error: Function resolve_path not found in module
+    Exception type: AttributeError
+  ! ERROR - save_data
+    Execution time: 0.0000s
+    Error: Function save_data not found in module
+    Exception type: AttributeError
+  ! ERROR - save_combined_data
+    Execution time: 0.0000s
+    Error: Function save_combined_data not found in module
+    Exception type: AttributeError
+
+================================================================================
+End of report

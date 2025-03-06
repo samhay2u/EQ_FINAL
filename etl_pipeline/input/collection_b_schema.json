@@ -1,0 +1,22 @@
+[
+    {
+        "_key": {"type": "string"},
+        "magnitude": {"type": "float"},
+        "magnitude_type": {"type": "string"},
+        "location": {"type": "string"},
+        "generated": {"type": "integer"},
+        "time": {"type": "string"},
+        "latitude": {"type": "float"},
+        "longitude": {"type": "float"},
+        "status": {"type": "string"},
+        "alert": {"type": "string"},
+        "felt": {"type": "integer"},
+        "title": {"type": "string"},
+        "type": {"type": "string"},
+        "detail": {"type": "string"},
+        "rms": {"type": "float"},
+        "tectonic_summary": {"type": "string"},
+        "gap": {"type": "integer"},
+        "dmin": {"type": "integer"}
+    }
+]

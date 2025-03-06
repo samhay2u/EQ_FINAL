@@ -1,0 +1,39 @@
+ pydantic>=2.0.0
+ pydantic-settings>=2.0.0
+ typing-extensions>=4.6.1
+
+ # Data processing
+ pandas>=1.5.0
+ numpy>=1.23.0
+ openpyxl>=3.0.10
+
+ # For Excel file support # File handling
+ python-dotenv>=1.0.0
+ pathlib>=1.0.1
+
+ # Logging and error handling
+ rich>=13.0.0
+
+ # For better console output
+
+ # Testing
+ pytest>=7.0.0
+ pytest-cov>=4.0.0
+
+ # Code quality
+
+ black>=23.0.0
+
+ isort>=5.12.0
+ flake8>=6.0.0
+
+ # Documentation
+
+ sphinx>=6.0.0
+ sphinx-rtd-theme>=1.2.0
+
+ # XML processing
+ lxml>=4.9.0
+
+ # JSON processing
+ ujson>=5.7.0

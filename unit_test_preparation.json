@@ -1,0 +1,1400 @@
+{
+  "C:\\Users\\samha\\PycharmProjects\\EQ_FINAL_03_04\\main_consolidated.py": {
+    "functions": {
+      "setup_logging": {
+        "input_types": {
+          "silent": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [],
+        "complexity": 8,
+        "function_calls": [
+          "logging.getLogger('etl.file_ops').setLevel",
+          "file_handler.setFormatter",
+          "root_logger.setLevel",
+          "validation_logger.setLevel",
+          "logging.StreamHandler",
+          "file_handler.setLevel",
+          "log_dir.mkdir",
+          "logging.getLogger",
+          "Path",
+          "console_handler.setFormatter",
+          "root_logger.addHandler",
+          "logging.Formatter",
+          "print",
+          "root_logger.removeHandler",
+          "ConciseFormatter",
+          "logging.FileHandler",
+          "console_handler.setLevel",
+          "logging.getLogger('etl.config').setLevel",
+          "output_logger.setLevel"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "print_with_checkmark": {
+        "input_types": {
+          "message": "str",
+          "success": "bool"
+        },
+        "output_type": "None",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "print"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "print_with_tabs": {
+        "input_types": {
+          "label": "str",
+          "value": "str"
+        },
+        "output_type": "None",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "print"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "verify_output_files": {
+        "input_types": {
+          "base_dir": "str",
+          "config": "dict"
+        },
+        "output_type": "None",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [
+          "'output_files' not in etl_config",
+          "isinstance(path, str)",
+          "path.endswith('.py')"
+        ],
+        "complexity": 7,
+        "function_calls": [
+          "config.get",
+          "f.read",
+          "open",
+          "print",
+          "path.endswith",
+          "json.load",
+          "isinstance",
+          "os.path.basename",
+          "path.replace",
+          "json.dumps",
+          "len",
+          "resolve_path",
+          "files.items"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "validate_network_path": {
+        "input_types": {
+          "path": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception",
+          "Exception"
+        ],
+        "validation_checks": [
+          "not path.startswith('\\\\\\\\')",
+          "len(parts) >= 3",
+          "not path_exists"
+        ],
+        "complexity": 7,
+        "function_calls": [
+          "path.startswith",
+          "path.split",
+          "logger.debug",
+          "thread.join",
+          "threading.Thread",
+          "logger.warning",
+          "thread.start",
+          "os.path.exists",
+          "len",
+          "socket.gethostbyname"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "path"
+          ],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "ensure_directory_exists": {
+        "input_types": {
+          "directory_path": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception",
+          "PermissionError",
+          "Exception"
+        ],
+        "validation_checks": [
+          "str(path).startswith('\\\\\\\\')",
+          "not os.path.exists(current_path)",
+          "len(parts) >= 4",
+          "not os.path.exists(current_path)",
+          "parts[i]",
+          "not os.path.exists(current_path) and i < len(parts) - 1"
+        ],
+        "complexity": 12,
+        "function_calls": [
+          "str(path).startswith",
+          "str",
+          "str(path).split",
+          "os.makedirs",
+          "logger.debug",
+          "PermissionError",
+          "Path",
+          "path.mkdir",
+          "FileNotFoundError",
+          "range",
+          "Exception",
+          "os.path.exists",
+          "len"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "directory_path"
+          ],
+          "xml_types": [],
+          "critical_complexity": true,
+          "error_prone": true
+        }
+      },
+      "save_with_retry": {
+        "input_types": {
+          "data": "Any",
+          "file_path": "Any",
+          "save_function": "Any",
+          "max_retries": "Any",
+          "initial_delay": "Any",
+          "log_success": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception",
+          "Exception"
+        ],
+        "validation_checks": [
+          "log_success",
+          "retry_count <= max_retries"
+        ],
+        "complexity": 6,
+        "function_calls": [
+          "logger.debug",
+          "time.sleep",
+          "save_function",
+          "Path",
+          "ensure_directory_exists",
+          "logger.error",
+          "logger.info",
+          "logger.warning"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "file_path"
+          ],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "load_file_with_retry": {
+        "input_types": {
+          "file_path": "Any",
+          "max_retries": "Any",
+          "initial_delay": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [
+          "retry_count <= max_retries"
+        ],
+        "complexity": 4,
+        "function_calls": [
+          "open",
+          "time.sleep",
+          "json.load",
+          "logger.error",
+          "logger.warning"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "file_path"
+          ],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "save_combined_output": {
+        "input_types": {
+          "json_data": "Any",
+          "xml_data": "Any",
+          "model_code": "Any",
+          "output_path": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [],
+        "complexity": 4,
+        "function_calls": [
+          "bool",
+          "os.path.dirname",
+          "open",
+          "os.makedirs",
+          "logger.debug",
+          "model_code.keys",
+          "list",
+          "time.strftime",
+          "logger.error",
+          "json.dump"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "output_path"
+          ],
+          "xml_types": [
+            "xml_data"
+          ],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "track_step": {
+        "input_types": {
+          "step_times": "Any",
+          "step_name": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "time.time",
+          "step_times.update"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "create_save_function": {
+        "input_types": {
+          "etl_processor": "Any",
+          "silent_mode": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "etl_processor.save_json_file"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "main": {
+        "input_types": {
+          "config_path": "str",
+          "args": "Namespace"
+        },
+        "output_type": "None",
+        "error_handlers": [
+          "Exception",
+          "Exception",
+          "Exception",
+          "Exception",
+          "Exception",
+          "Exception"
+        ],
+        "validation_checks": [
+          "not silent_mode",
+          "args.output_dir",
+          "args.format in ['json', 'both']",
+          "args.format in ['xml', 'both']",
+          "not args.no_models",
+          "not args.no_models and model_code and (json_data or xml_data)",
+          "not args.skip_validation",
+          "output_dir.startswith('\\\\\\\\')",
+          "len(verify_params) >= 3",
+          "'No such file or directory' in str(e)",
+          "not network_path_valid and args.local_fallback",
+          "isinstance(subdir, dict)",
+          "args.format in ['json', 'both'] and json_data",
+          "args.format in ['xml', 'both'] and xml_data",
+          "save_with_retry(None, combined_output_path, save_combined_data, log_success=False)",
+          "not isinstance(json_output, list) or len(json_output) == 0",
+          "not isinstance(xml_output, list) or len(xml_output) == 0",
+          "'Permission denied' in str(e)",
+          "not network_path_valid",
+          "missing_fields",
+          "missing_fields",
+          "'_key' not in record",
+          "'type' not in record",
+          "len(missing_fields) > 5",
+          "'_key' not in record",
+          "'type' not in record",
+          "len(missing_fields) > 5",
+          "'network path was not found' in str(dir_error).lower()"
+        ],
+        "complexity": 56,
+        "function_calls": [
+          "ETLProcessor",
+          "bool",
+          "validation_logger.info",
+          "schema_handler.get_schema_keys",
+          "subdir.items",
+          "output_dir.startswith",
+          "ConfigurationManager",
+          "getattr",
+          "tempfile.gettempdir",
+          "time.strftime",
+          "validation_timer",
+          "xml_timer",
+          "validation_logger.setLevel",
+          "load_file_with_retry",
+          "len",
+          "str(dir_error).lower",
+          "save_with_retry",
+          "os.path.join",
+          "json_timer",
+          "str",
+          "verify_output_files",
+          "track_step",
+          "logging.getLogger",
+          "validation_logger.warning",
+          "Path",
+          "etl_processor.process_json_data",
+          "config_manager.config.keys",
+          "schema_timer",
+          "logger.info",
+          "logger.error",
+          "isinstance",
+          "schema_handler.generate_pydantic_model",
+          "SchemaHandler",
+          "ensure_directory_exists",
+          "create_save_function",
+          "step_times.items",
+          "setup_logging",
+          "logger.debug",
+          "validate_network_path",
+          "list",
+          "verify_timer",
+          "config_manager.paths['output_files']['data'].get",
+          "json.dump",
+          "time.time",
+          "missing_fields.append",
+          "open",
+          "config_manager.paths['output_files'].items",
+          "enumerate",
+          "model_code.keys",
+          "etl_processor.process_xml_data",
+          "FileNotFoundError",
+          "logger.warning",
+          "model_timer",
+          "inspect.signature",
+          "schema_handler.load_schema"
+        ],
+        "test_generation_hints": {
+          "path_types": [
+            "config_path"
+          ],
+          "xml_types": [],
+          "critical_complexity": true,
+          "error_prone": true
+        }
+      },
+      "format": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "record.getMessage"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "__init__": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.config.get",
+          "str",
+          "self._setup_paths",
+          "Path",
+          "self._load_config"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "ensure_directories": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "key == 'temp'",
+          "isinstance(path, dict)",
+          "isinstance(path, Path)",
+          "isinstance(items, dict)"
+        ],
+        "complexity": 10,
+        "function_calls": [
+          "items.parent.mkdir",
+          "items.values",
+          "isinstance",
+          "paths.items",
+          "path.items",
+          "path if not path.suffix else path.parent.mkdir",
+          "file_path.parent.mkdir"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_config_value": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.config.get"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_input_file_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.paths['input_files'].get"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_output_file_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.paths['output_files'][category].get"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_app_paths": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "self.path_config.get",
+          "self.path_config.get('app_paths', default_paths).items",
+          "Path"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "process_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "logger.error",
+          "self.process_xml_data"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "process_json_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "FileNotFoundError"
+        ],
+        "validation_checks": [],
+        "complexity": 3,
+        "function_calls": [
+          "logger.error",
+          "self.process_collection_n",
+          "open",
+          "json.load"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "process_xml_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "FileNotFoundError"
+        ],
+        "validation_checks": [],
+        "complexity": 3,
+        "function_calls": [
+          "logger.error",
+          "ET.parse(xml_path).getroot",
+          "self.process_xml_root",
+          "ET.parse"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "process_collection_n": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.flatten_data"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "process_xml_root": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.create_matched_data",
+          "self.xml_to_dict",
+          "self.process_xml_content"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "xml_to_dict": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "element.text and element.text.strip()"
+        ],
+        "complexity": 7,
+        "function_calls": [
+          "self.parse_element_text",
+          "element.attrib.items",
+          "element.text.strip",
+          "self.xml_to_dict",
+          "self.transform_value",
+          "result.update"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "transform_value": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(value, str)"
+        ],
+        "complexity": 3,
+        "function_calls": [
+          "isinstance",
+          "json.loads"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "parse_element_text": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(content, (dict, list))"
+        ],
+        "complexity": 4,
+        "function_calls": [
+          "element.text.strip",
+          "isinstance",
+          "json.loads",
+          "self.flatten_data"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "flatten_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(data, dict)",
+          "isinstance(data, list)"
+        ],
+        "complexity": 8,
+        "function_calls": [
+          "items.append",
+          "data.items",
+          "items.extend",
+          "str",
+          "enumerate",
+          "dict",
+          "isinstance",
+          "self.flatten_data(v, new_key).items",
+          "self.flatten_data(item, new_key).items",
+          "self.flatten_data"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "process_xml_content": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "root.findall",
+          "self.xml_to_dict"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "create_matched_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "matched"
+        ],
+        "complexity": 5,
+        "function_calls": [
+          "self.strip_key_prefixes({k: v}).keys",
+          "self.strip_key_prefixes({k: v}).keys().isdisjoint",
+          "stripped.items",
+          "self.strip_key_prefixes",
+          "matched_data.append",
+          "json.dumps",
+          "feature.items"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "strip_key_prefixes": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "data.items",
+          "key.split"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "save_json_file": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "open",
+          "logger.error",
+          "output_path.parent.mkdir",
+          "json.dump"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "load_schema": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self.get_schema_keys",
+          "self._read_schema_file"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "generate_pydantic_model": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "Path(output_path).write_text",
+          "isinstance",
+          "self._generate_model_code",
+          "Path"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "get_schema_keys": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "sorted",
+          "self._extract_keys",
+          "list",
+          "set"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "resolve_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(path, str)"
+        ],
+        "complexity": 2,
+        "function_calls": [
+          "isinstance",
+          "path.replace"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "save_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "etl_processor.save_json_file"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "check_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [],
+        "complexity": 2,
+        "function_calls": [
+          "os.path.exists"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "save_combined_data": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 3,
+        "function_calls": [
+          "bool",
+          "open",
+          "model_code.keys",
+          "list",
+          "time.strftime",
+          "json.dump"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "ConfigurationManager._load_config": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "not isinstance(config, dict)"
+        ],
+        "complexity": 3,
+        "function_calls": [
+          "open",
+          "json.load",
+          "logger.error",
+          "ValueError",
+          "isinstance"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "ConfigurationManager._resolve_path": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(path_str, str)",
+          "'${base_dir}' in path_str",
+          "'${base_path}' in path_str"
+        ],
+        "complexity": 5,
+        "function_calls": [
+          "self.config.get",
+          "path_str.replace",
+          "isinstance",
+          "str"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "ConfigurationManager._setup_paths": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(files, dict)"
+        ],
+        "complexity": 3,
+        "function_calls": [
+          "self.config.get",
+          "output_files.items",
+          "self._resolve_path",
+          "input_files.items",
+          "Path",
+          "self.ensure_directories",
+          "isinstance",
+          "files.items",
+          "etl_config.get"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "PlatformManager._get_platform_info": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "platform.release",
+          "platform.machine",
+          "platform.version",
+          "platform.processor",
+          "platform.system",
+          "platform.python_version"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "PlatformManager._set_permissions": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "Exception"
+        ],
+        "validation_checks": [
+          "not self.is_windows"
+        ],
+        "complexity": 4,
+        "function_calls": [
+          "logger.warning",
+          "path.chmod",
+          "str",
+          "path.is_file"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      },
+      "SchemaHandler._process_schema_item": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "'additional_data_blob' in item"
+        ],
+        "complexity": 2,
+        "function_calls": [
+          "self._decode_blob"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._decode_blob": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "not isinstance(blob, str) or not blob.strip().startswith('{')"
+        ],
+        "complexity": 7,
+        "function_calls": [
+          "decoded.items",
+          "blob.strip().startswith",
+          "blob.strip",
+          "v.strip",
+          "isinstance",
+          "v.strip().startswith",
+          "self._decode_blob",
+          "json.loads"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._generate_model_code": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(value, dict)"
+        ],
+        "complexity": 3,
+        "function_calls": [
+          "key.title",
+          "self._generate_nested_model",
+          "'\\n\\n'.join",
+          "self._get_validator_code",
+          "key.title().replace",
+          "isinstance",
+          "main_model_fields.append",
+          "models.append",
+          "sample_data.items",
+          "self._infer_field_type",
+          "'\\n'.join"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._generate_nested_model": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [
+          "self._infer_field_type",
+          "data.items",
+          "'\\n'.join"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._infer_field_type": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "type(value) in types",
+          "isinstance(value, str)",
+          "isinstance(value, list)"
+        ],
+        "complexity": 6,
+        "function_calls": [
+          "value.strip",
+          "value.strip().startswith",
+          "type",
+          "isinstance",
+          "self._infer_field_type"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._get_validator_code": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [],
+        "complexity": 1,
+        "function_calls": [],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._extract_keys": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [],
+        "validation_checks": [
+          "isinstance(value, dict)",
+          "isinstance(value, str) and value.strip().startswith('{')"
+        ],
+        "complexity": 7,
+        "function_calls": [
+          "data.items",
+          "self._extract_keys",
+          "value.strip().startswith",
+          "keys.add",
+          "value.strip",
+          "isinstance",
+          "json.loads"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": false
+        }
+      },
+      "SchemaHandler._read_schema_file": {
+        "input_types": {
+          "args": "Any",
+          "kwargs": "Any"
+        },
+        "output_type": "Any",
+        "error_handlers": [
+          "IOError"
+        ],
+        "validation_checks": [],
+        "complexity": 3,
+        "function_calls": [
+          "logger.error",
+          "Path(schema_path).open",
+          "Path",
+          "json.load"
+        ],
+        "test_generation_hints": {
+          "path_types": [],
+          "xml_types": [],
+          "critical_complexity": false,
+          "error_prone": true
+        }
+      }
+    }
+  }
+}

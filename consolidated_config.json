@@ -1,0 +1,142 @@
+{
+  "documentation": {
+    "description": "Consolidated config file for both io_analyzer.py and main_consolidated.py",
+    "purpose": "Single source of truth for all configuration settings",
+    "replaces": "Separate config files previously in the root and etl_pipeline directories",
+    "last_updated": "2025-03-04",
+    "usage": "Pass this file to scripts using the --config parameter",
+    "example": "python io_analyzer.py --config path/to/consolidated_config.json",
+    "notes": "All paths use ${base_dir} for portability"
+  },
+  "base_dir": "C:/Users/samha/PycharmProjects/EQ_FINAL_03_04",
+  "etl_pipeline": {
+    "input_files": {
+      "file_a": "${base_dir}/etl_pipeline/input/collection_n_schema.json",
+      "file_a_xml": "${base_dir}/etl_pipeline/input/collection_n_schema.xml",
+      "file_b": "${base_dir}/etl_pipeline/input/collection_b_schema.json"
+    },
+    "output_files": {
+      "scripts": {
+        "file_a": "${base_dir}/etl_pipeline/output/scripts/item_n.py",
+        "file_a_xml": "${base_dir}/etl_pipeline/output/scripts/item_n_xml.py",
+        "file_b": "${base_dir}/etl_pipeline/output/scripts/item_b.py"
+      },
+      "data": {
+        "json_flatout": "${base_dir}/etl_pipeline/output/data/json_n_flatout.json",
+        "xml_flatout": "${base_dir}/etl_pipeline/output/data/xml_n_flatout.json",
+        "pattern_analysis": "${base_dir}/etl_pipeline/output/data/pattern_analysis.json",
+        "memory_metrics": "${base_dir}/etl_pipeline/output/data/memory_metrics.log"
+      },
+      "comparison": {
+        "intersect_json": "${base_dir}/etl_pipeline/output/comparison/intersect_json_bn.json",
+        "intersect_xml": "${base_dir}/etl_pipeline/output/comparison/intersect_xml_bn.json",
+        "matched_fields_json": "${base_dir}/etl_pipeline/output/comparison/matched_fields_json.json",
+        "nonmatched_fields_json": "${base_dir}/etl_pipeline/output/comparison/nonmatched_fields_json.json",
+        "matched_fields_xml": "${base_dir}/etl_pipeline/output/comparison/matched_fields_xml.json",
+        "nonmatched_fields_xml": "${base_dir}/etl_pipeline/output/comparison/nonmatched_fields_xml.json"
+      }
+    },
+    "validation": {
+      "draft": 7,
+      "strict_mode": true,
+      "additional_properties": false
+    },
+    "model_generation": {
+      "type_mapping": {
+        "int": "int",
+        "float": "float",
+        "str": "str",
+        "bool": "bool",
+        "None": "Optional[Any]",
+        "list": "List[Any]",
+        "dict": "dict"
+      },
+      "indent": "    "
+    },
+    "transform_rules": {
+      "flatten_arrays": true,
+      "parse_json_strings": true,
+      "strip_prefixes": true
+    }
+  },
+  "io_analyzer": {
+    "input_files": {
+      "file_a": "${base_dir}/etl_pipeline/input/collection_n_schema.json",
+      "file_b": "${base_dir}/etl_pipeline/input/collection_b_schema.json",
+      "file_a_xml": "${base_dir}/etl_pipeline/input/collection_n_schema.xml"
+    },
+    "output_files": {
+      "pattern_analysis": "${base_dir}/etl_pipeline/output/data/pattern_analysis.json",
+      "memory_metrics": "${base_dir}/etl_pipeline/output/data/memory_metrics.log"
+    },
+    "analysis_settings": {
+      "depth_calculation": {
+        "max_depth": 10,
+        "track_changes": true
+      },
+      "data_quality_checks": {
+        "check_types": true,
+        "check_null": true,
+        "check_patterns": true
+      }
+    },
+    "analysis": {
+      "output_directory": "${base_dir}/etl_pipeline/output/analysis",
+      "data_quality": {
+        "enabled": true,
+        "check_types": true,
+        "check_null": true,
+        "check_patterns": true,
+        "output_file": "data_quality_report.json"
+      },
+      "performance": {
+        "track_memory": true,
+        "track_time": true,
+        "track_io": true,
+        "output_file": "performance_metrics.json"
+      },
+      "structure": {
+        "max_depth": 10,
+        "track_changes": true,
+        "analyze_patterns": true,
+        "output_file": "structure_analysis.json"
+      }
+    },
+    "target_file": "${base_dir}/main_consolidated.py",
+    "output_file": "${base_dir}/unit_test_preparation.json"
+  },
+  "test_generator": {
+    "validate_schema": true,
+    "paths": {
+      "input_files": {
+        "test": "${base_dir}/test_generator/test/input",
+        "test_file_path": "${base_dir}/test_generator/test/test_file_path.json"
+      },
+      "output_files": {
+        "test": "${base_dir}/test_generator/test/output"
+      }
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "path": "${base_dir}/etl_pipeline/logs/etl.log",
+    "handlers": [
+      "file",
+      "stream",
+      "rotating"
+    ],
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "maxBytes": 10485760,
+    "backupCount": 5,
+    "separators": {
+      "key": "__",
+      "path": "/"
+    }
+  },
+  "error_handling": {
+    "max_retries": 3,
+    "retry_delay": 5,
+    "fail_fast": false
+  },
+  "combined_output": "${base_dir}/combined_output.json"
+}
